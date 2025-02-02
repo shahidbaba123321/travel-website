@@ -1,7 +1,13 @@
 .footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333;
+  background-color: var(--secondary-color);
   color: #fff;
-  margin-top: 2rem;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
