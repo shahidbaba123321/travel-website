@@ -1,26 +1,23 @@
+/* Floating Chat Widget with Micro-Interactions */
 .chat-widget {
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  z-index: 300;
+  gap: 15px;
+  z-index: 1200;
 }
 
-.chat-widget a {
-  display: block;
-}
-
-.chat-widget img {
+.chat-widget a img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.chat-widget img:hover {
+.chat-widget a img:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
