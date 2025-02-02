@@ -1,11 +1,10 @@
-/* Global Styles and Custom Properties */
+/* Global Reset & Custom Properties */
 :root {
-  --primary: #ff6363;
-  --primary-dark: #e55353;
-  --secondary: #0d0d0d;
+  --primary: #ff4d4d;
+  --primary-dark: #e04343;
+  --secondary: #1a1a1a;
+  --light: #f7f7f7;
   --text: #333;
-  --bg: #f5f5f5;
-  --glass-bg: rgba(255, 255, 255, 0.15);
   --transition: 0.3s ease;
   --max-width: 1200px;
 }
@@ -23,9 +22,9 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--light);
   color: var(--text);
-  background-color: var(--bg);
   line-height: 1.6;
 }
 
@@ -33,10 +32,10 @@ body {
   width: 90%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
-/* Utility Classes */
+/* Utility */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -46,42 +45,4 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-3px);
-}
-
-.btn-secondary {
-  background: #ddd;
-  color: var(--secondary);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
-}
-
-.btn-secondary:hover {
-  background: #ccc;
-  transform: translateY(-3px);
-}
-
-/* Lazy Loading Placeholder */
-.lazy {
-  opacity: 0;
-  transition: opacity var(--transition);
 }
