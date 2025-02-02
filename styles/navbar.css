@@ -1,11 +1,12 @@
-/* Sticky Navbar with Glass Effect */
+/* Professional Sticky Navbar with Minimalist Style */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar .container {
@@ -16,9 +17,9 @@
 
 .logo {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 800;
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
 }
 
 .menu-toggle {
@@ -37,7 +38,7 @@
   border-radius: 2px;
 }
 
-/* Desktop Navigation */
+/* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -47,7 +48,7 @@
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
   transition: color var(--transition);
 }
@@ -67,7 +68,7 @@
   width: 100%;
 }
 
-/* Responsive Navigation */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -75,10 +76,10 @@
 
   .nav-links {
     position: fixed;
-    right: -100%;
     top: 0;
-    width: 250px;
+    right: -100%;
     height: 100%;
+    width: 250px;
     background: var(--secondary);
     flex-direction: column;
     justify-content: center;
