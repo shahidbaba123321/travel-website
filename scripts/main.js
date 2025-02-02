@@ -1,6 +1,6 @@
 // main.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Navbar toggle for mobile
+  // Mobile Navbar Toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -8,77 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.classList.toggle('open');
   });
 
-  // Intersection Observer for reveal animations
+  // Intersection Observer for Reveal Animations
   const revealElements = document.querySelectorAll('.reveal');
-  const observerOptions = {
-    threshold: 0.2,
-  };
-
-  const revealOnScroll = (entries, observer) => {
-    entries.forEach((entry) => {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
         observer.unobserve(entry.target);
       }
     });
-  };
+  }, { threshold: 0.2 });
 
-  const observer = new IntersectionObserver(revealOnScroll, observerOptions);
-  revealElements.forEach((el) => observer.observe(el));
+  revealElements.forEach(el => revealObserver.observe(el));
 
-  // Lazy Load Images
+  // Lazy Loading Images
   const lazyImages = document.querySelectorAll('.lazy');
-  const imageObserverOptions = {
-    rootMargin: '0px 0px 50px 0px',
-  };
-
-  const lazyLoad = (entries, imgObserver) => {
-    entries.forEach((entry) => {
+  const lazyObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;
-        if (img.dataset.bg) {
-          img.style.backgroundImage = `url(${img.dataset.bg})`;
-        } else if (img.dataset.src) {
-          img.src = img.dataset.src;
-        }
-        img.classList.remove('lazy');
-        imgObserver.unobserve(img);
+        img.src = img.dataset.src;
+        img.onload = () => img.style.opacity = 1;
+        observer.unobserve(img);
       }
     });
-  };
+  }, { rootMargin: "0px 0px 50px 0px" });
 
-  const imgObserver = new IntersectionObserver(lazyLoad, imageObserverOptions);
-  lazyImages.forEach((img) => {
-    imgObserver.observe(img);
-  });
-
-  // Parallax effect for hero background
-  const heroBg = document.querySelector('.hero-bg');
-  window.addEventListener('scroll', () => {
-    const offset = window.pageYOffset;
-    if (heroBg) {
-      heroBg.style.transform = `translateY(${offset * 0.5}px)`;
-    }
-  });
+  lazyImages.forEach(img => lazyObserver.observe(img));
 });
 
-// Enquiry Form Modal Functions
+// Modal Functions (Exported for potential module usage)
 export function openEnquiryForm() {
-  const enquiryForm = document.getElementById('enquiryForm');
-  if (enquiryForm) {
-    enquiryForm.style.display = 'flex';
-  }
+  document.getElementById('enquiryForm').style.display = 'flex';
 }
 
 export function closeEnquiryForm() {
-  const enquiryForm = document.getElementById('enquiryForm');
-  if (enquiryForm) {
-    enquiryForm.style.display = 'none';
-  }
+  document.getElementById('enquiryForm').style.display = 'none';
 }
 
 export function submitForm(event) {
   event.preventDefault();
-  alert('Thank you for your enquiry! We will contact you soon.');
+  alert('Thank you! We will contact you soon.');
   closeEnquiryForm();
 }
