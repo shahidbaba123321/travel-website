@@ -1,0 +1,19 @@
+/* src/styles/ChatWidget.css */
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-widget img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.chat-widget img:hover {
+  transform: scale(1.2);
+}
