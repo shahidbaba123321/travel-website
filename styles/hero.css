@@ -1,4 +1,4 @@
-/* Hero Section with Video Background and Dynamic Shapes */
+/* Hero Section with Video Background & Parallax Effect */
 .hero {
   position: relative;
   height: 100vh;
@@ -14,11 +14,9 @@
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -2;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  z-index: -2;
 }
 
 .hero-overlay {
@@ -34,12 +32,12 @@
 .hero-content {
   text-align: center;
   color: #fff;
-  z-index: 1;
-  animation: fadeIn 1.2s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -49,11 +47,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 0;
   overflow: hidden;
-  border-right: .15em solid var(--primary);
   white-space: nowrap;
-  animation: typing 2s steps(20) forwards, blink-caret 0.75s step-end infinite;
+  border-right: 2px solid var(--primary);
+  animation: typewriter 2s steps(20) forwards, blink 0.75s step-end infinite;
 }
 
 .hero-content p {
@@ -61,39 +59,40 @@
   margin-bottom: 2rem;
 }
 
-.btn-glass {
-  background: var(--glass-bg);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.btn-hero {
+  background: var(--primary);
   color: #fff;
   padding: 0.8rem 2rem;
+  border: none;
   border-radius: 50px;
-  backdrop-filter: blur(8px);
   cursor: pointer;
-  transition: transform var(--transition);
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
 }
 
-.btn-glass:hover {
-  transform: translateY(-4px);
+.btn-hero:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
 }
 
-/* Decorative SVG Shape */
-.hero-shape {
+.hero-wave {
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: -1;
 }
 
-/* Keyframe Animations */
+/* Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes typing {
+@keyframes typewriter {
   from { width: 0; }
   to { width: 100%; }
 }
 
-@keyframes blink-caret {
+@keyframes blink {
   50% { border-color: transparent; }
 }
