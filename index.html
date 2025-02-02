@@ -1,147 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TravelWorld Ultra</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/hero.css" />
-    <link rel="stylesheet" href="styles/sections.css" />
-    <link rel="stylesheet" href="styles/enquiry-form.css" />
-    <link rel="stylesheet" href="styles/chat-widget.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="container">
-        <div class="logo">TravelWorld Ultra</div>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#tours">Tours</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelWorld</title>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/home.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/enquiry-form.css" />
+  <link rel="stylesheet" href="styles/chat-widget.css" />
+  <link rel="stylesheet" href="styles/blog.css" />
+  <link rel="stylesheet" href="styles/gallery.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">TravelWorld</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tour-packages">Tour Packages</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#cab-services">Cab Services</a></li>
+      <li><a href="#self-drive">Self Drive</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
 
-    <!-- Hero Section with Video Background and Dynamic Shapes -->
-    <header id="hero" class="hero">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="assests/videos/hero.mp4" type="video/mp4" />
-        <!-- Fallback image -->
-        Your browser does not support the video tag.
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 data-text="Discover the Unseen">Discover the Unseen</h1>
-        <p>Embark on journeys that defy the ordinary.</p>
-        <button class="btn-glass" onclick="openEnquiryForm()">Plan Your Escape</button>
-      </div>
-      <!-- Decorative SVG Shape -->
-      <svg class="hero-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#ffffff" fill-opacity="0.1" d="M0,192L1440,96L1440,0L0,0Z"></path>
-      </svg>
-    </header>
-
-    <!-- Tours Section -->
-    <section id="tours" class="section reveal">
-      <div class="container">
-        <h2>Exclusive Tours</h2>
-        <div class="cards-grid">
-          <!-- Tour Card Example -->
-          <div class="card">
-            <div class="card-image">
-              <img data-src="assests/images/tour1.jpg" alt="Safari Adventure" class="lazy" />
-            </div>
-            <div class="card-content">
-              <h3>Safari Adventure</h3>
-              <p>Explore the wild in style with our premium safari tours.</p>
-              <a href="#" class="btn-primary">Learn More</a>
-            </div>
+  <!-- Home Section -->
+  <section id="home" class="home">
+    <div class="hero">
+      <h1>Explore the World with Us</h1>
+      <p>Your journey begins here.</p>
+      <button onclick="openEnquiryForm()">Book Now</button>
+    </div>
+    <div class="featured-tours">
+      <h2>Featured Tour Packages</h2>
+      <div class="tour-cards">
+        <div class="card">
+          <img src="assets/images/tour1.jpg" alt="Tour 1" />
+          <div class="card-content">
+            <h3>Tour Package 1</h3>
+            <p>Explore the best destinations with our exclusive packages.</p>
           </div>
-          <!-- More cards as needed -->
+        </div>
+        <div class="card">
+          <img src="assets/images/tour2.jpg" alt="Tour 2" />
+          <div class="card-content">
+            <h3>Tour Package 2</h3>
+            <p>Discover hidden gems with our expert guides.</p>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Destinations Section -->
-    <section id="destinations" class="section reveal">
-      <div class="container">
-        <h2>Dream Destinations</h2>
-        <div class="cards-grid">
-          <div class="card">
-            <div class="card-image">
-              <img data-src="assests/images/destination1.jpg" alt="Mystic Mountains" class="lazy" />
-            </div>
-            <div class="card-content">
-              <h3>Mystic Mountains</h3>
-              <p>Find tranquility amidst breathtaking peaks.</p>
-              <a href="#" class="btn-primary">Explore</a>
-            </div>
+    </div>
+    <div class="popular-destinations">
+      <h2>Popular Destinations</h2>
+      <div class="destination-cards">
+        <div class="card">
+          <img src="assets/images/destination1.jpg" alt="Destination 1" />
+          <div class="card-content">
+            <h3>Destination 1</h3>
+            <p>Experience the beauty of nature.</p>
           </div>
-          <!-- More cards as needed -->
+        </div>
+        <div class="card">
+          <img src="assets/images/destination2.jpg" alt="Destination 2" />
+          <div class="card-content">
+            <h3>Destination 2</h3>
+            <p>Immerse yourself in local culture.</p>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Enquiry Form Modal -->
-    <div id="enquiryForm" class="enquiry-form">
-      <div class="modal-content">
-        <button class="close-modal" aria-label="Close Form" onclick="closeEnquiryForm()">&times;</button>
-        <form onsubmit="submitForm(event)">
-          <h2>Contact Us</h2>
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="tel" placeholder="Phone" required />
-          <select required>
-            <option value="">Select Service</option>
-            <option value="tour">Tour Inquiry</option>
-            <option value="destination">Destination Inquiry</option>
-          </select>
-          <textarea placeholder="How can we help?" required></textarea>
-          <div class="form-buttons">
-            <button type="submit" class="btn-primary">Send</button>
-            <button type="button" class="btn-secondary" onclick="closeEnquiryForm()">Cancel</button>
-          </div>
-        </form>
-      </div>
     </div>
+  </section>
 
-    <!-- Chat Widget -->
-    <div class="chat-widget">
-      <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-        <img src="assets/icons/facebook.png" alt="Facebook" />
-      </a>
-      <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-        <img src="assests/icons/instagram.png" alt="Instagram" />
-      </a>
-      <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp">
-        <img src="assests/icons/whatsapp.png" alt="WhatsApp" />
-      </a>
-    </div>
+  <!-- Enquiry Form (Hidden by Default) -->
+  <div id="enquiryForm" class="enquiry-form">
+    <form onsubmit="submitForm(event)">
+      <h2>Enquiry Form</h2>
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="tel" placeholder="Phone" required />
+      <select required>
+        <option value="">Select Service</option>
+        <option value="tour">Tour Package</option>
+        <option value="cab">Cab Service</option>
+        <option value="self-drive">Self Drive</option>
+      </select>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Submit</button>
+      <button type="button" onclick="closeEnquiryForm()">Close</button>
+    </form>
+  </div>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-      <div class="container">
-        <p>&copy; 2023 TravelWorld Ultra. All Rights Reserved.</p>
-      </div>
-    </footer>
+  <!-- Chat Widget -->
+  <div class="chat-widget">
+    <a href="https://facebook.com" target="_blank">
+      <img src="assets/icons/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://instagram.com" target="_blank">
+      <img src="assets/icons/instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://wa.me/1234567890" target="_blank">
+      <img src="assets/icons/whatsapp.png" alt="WhatsApp" />
+    </a>
+  </div>
 
-    <!-- Scripts -->
-    <script src="scripts/main.js" type="module"></script>
-  </body>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2023 TravelWorld. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
 </html>
