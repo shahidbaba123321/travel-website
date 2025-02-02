@@ -6,8 +6,12 @@
   transform: translate(-50%, -50%);
   background: #fff;
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .enquiry-form form {
@@ -17,8 +21,10 @@
 }
 
 .enquiry-form input, .enquiry-form select, .enquiry-form textarea {
-  padding: 0.5rem;
+  padding: 0.75rem;
   font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .enquiry-form button {
@@ -28,8 +34,15 @@
   color: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .enquiry-form button:hover {
   background-color: #ff4500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
